@@ -1,0 +1,31 @@
+check,passed
+row count equals raw file,True
+"row count is 7,043",True
+customer_id is unique,True
+no missing values in any column,True
+tenure_months between 0 and 72,True
+monthly_charges above 0,True
+total_charges is 0 only for new customers,True
+churned matches churn,True
+churn counts unchanged from raw,True
+sum of monthly_charges unchanged from raw,True
+customers without internet have 0 add-ons,True
+addon_services between 0 and 6,True
+gender has only allowed values,True
+senior_citizen has only allowed values,True
+partner has only allowed values,True
+dependents has only allowed values,True
+phone_service has only allowed values,True
+multiple_lines has only allowed values,True
+internet_service has only allowed values,True
+online_security has only allowed values,True
+online_backup has only allowed values,True
+device_protection has only allowed values,True
+tech_support has only allowed values,True
+streaming_tv has only allowed values,True
+streaming_movies has only allowed values,True
+contract has only allowed values,True
+paperless_billing has only allowed values,True
+payment_method has only allowed values,True
+churn has only allowed values,True
+tenure_group has only allowed values,True

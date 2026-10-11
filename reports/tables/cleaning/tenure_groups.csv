@@ -1,0 +1,5 @@
+tenure_group,customers,min_tenure,max_tenure
+0-12 months,2186,0,12
+13-24 months,1024,13,24
+25-48 months,1594,25,48
+49-72 months,2239,49,72

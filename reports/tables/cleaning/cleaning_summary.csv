@@ -1,0 +1,10 @@
+item,value
+rows in raw file,7043
+rows in clean file,7043
+columns in raw file,21
+columns in clean file,25
+blank total_charges set to 0,11
+new customers (tenure 0),11
+customers who churned,1869
+customers without internet service,1526
+customers without phone service,682
