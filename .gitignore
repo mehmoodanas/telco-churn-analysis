@@ -1,0 +1,23 @@
+# Raw dataset (downloaded by src/download_data.py, see data/README.md)
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated data
+data/processed/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Credentials
+.env
+kaggle.json
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
