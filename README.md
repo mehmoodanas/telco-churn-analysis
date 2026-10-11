@@ -12,7 +12,7 @@ A telecom company is losing customers. The retention manager wants to know:
 4. Can we predict which current customers are most at risk?
 5. What should the company do first to reduce churn?
 
-The analysis uses the IBM Telco Customer Churn sample dataset: 7,043 customers of a fictional telecom company. Results describe this sample only.
+The analysis uses the IBM Telco Customer Churn sample dataset (7,043 customers). It is sample data, so results describe this dataset only and not a real company.
 
 ## Tools
 
