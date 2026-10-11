@@ -1,0 +1,10 @@
+check,rows_failing
+duplicate customerID,0
+duplicate full rows,0
+no internet but an add-on is not 'No internet service',0
+has internet but an add-on says 'No internet service',0
+no phone but MultipleLines is not 'No phone service',0
+has phone but MultipleLines says 'No phone service',0
+blank TotalCharges with tenure above 0,0
+tenure 0 with a TotalCharges value,0
+customer with neither phone nor internet,0
