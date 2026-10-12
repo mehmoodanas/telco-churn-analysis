@@ -1,0 +1,7 @@
+feature,group,customers,mean,median
+tenure_months,churned,1869,17.98,10.0
+tenure_months,stayed,5174,37.57,38.0
+monthly_charges,churned,1869,74.44,79.65
+monthly_charges,stayed,5174,61.27,64.43
+total_charges,churned,1869,1531.8,703.55
+total_charges,stayed,5174,2549.91,1679.52

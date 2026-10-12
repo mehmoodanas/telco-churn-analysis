@@ -1,0 +1,19 @@
+rank,feature,highest_group,highest_rate_pct,highest_n,lowest_group,lowest_rate_pct,lowest_n,gap_pct_points
+1,addon_services,1,45.76,966,6,5.28,284,40.48
+2,contract,Month-to-month,42.71,3875,Two year,2.83,1695,39.88
+3,tenure_group,0-12 months,47.44,2186,49-72 months,9.51,2239,37.93
+4,internet_service,Fiber optic,41.89,3096,No,7.4,1526,34.49
+5,online_security,No,41.77,3498,No internet service,7.4,1526,34.37
+6,tech_support,No,41.64,3473,No internet service,7.4,1526,34.24
+7,online_backup,No,39.93,3088,No internet service,7.4,1526,32.53
+8,device_protection,No,39.13,3095,No internet service,7.4,1526,31.73
+9,payment_method,Electronic check,45.29,2365,Credit card (automatic),15.24,1522,30.05
+10,streaming_movies,No,33.68,2785,No internet service,7.4,1526,26.28
+11,streaming_tv,No,33.52,2810,No internet service,7.4,1526,26.12
+12,senior_citizen,Yes,41.68,1142,No,23.61,5901,18.07
+13,paperless_billing,Yes,33.57,4171,No,16.33,2872,17.24
+14,dependents,No,31.28,4933,Yes,15.45,2110,15.83
+15,partner,No,32.96,3641,Yes,19.66,3402,13.3
+16,multiple_lines,Yes,28.61,2971,No phone service,24.93,682,3.68
+17,phone_service,Yes,26.71,6361,No,24.93,682,1.78
+18,gender,Female,26.92,3488,Male,26.16,3555,0.76

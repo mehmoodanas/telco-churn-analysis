@@ -1,0 +1,13 @@
+contract,tenure_group,customers,churned,churn_rate_pct,small_cell
+Month-to-month,0-12 months,1994,1024,51.35,False
+Month-to-month,13-24 months,737,278,37.72,False
+Month-to-month,25-48 months,802,264,32.92,False
+Month-to-month,49-72 months,342,89,26.02,False
+One year,0-12 months,124,13,10.48,False
+One year,13-24 months,197,16,8.12,False
+One year,25-48 months,518,55,10.62,False
+One year,49-72 months,634,82,12.93,False
+Two year,0-12 months,68,0,0.0,False
+Two year,13-24 months,90,0,0.0,False
+Two year,25-48 months,274,6,2.19,False
+Two year,49-72 months,1263,42,3.33,False

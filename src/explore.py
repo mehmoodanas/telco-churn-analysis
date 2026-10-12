@@ -20,6 +20,11 @@ CATEGORICAL_FEATURES = [
 ]
 NUMERIC_FEATURES = ["tenure_months", "monthly_charges", "total_charges"]
 
+MIN_CELL = 50       # two-way cells below this get no churn rate and are flagged
+MIN_SEGMENT = 100   # segments below this are left out of the risk ranking
+SEGMENT_PAIRS = [("contract", "internet_service"), ("contract", "tenure_group"),
+                 ("internet_service", "payment_method")]
+
 
 def load_clean():
     return pd.read_csv(CLEAN_FILE)
@@ -104,6 +109,43 @@ def numeric_comparison(df):
     return pd.DataFrame(rows)
 
 
+def two_way(df, row_feature, col_feature):
+    """Churn rate for every row x column combination, with n for every cell.
+
+    Cells with fewer than MIN_CELL customers keep their n but get no churn rate
+    and are flagged, because a rate from so few customers is unreliable.
+    """
+    g = group_summary(df, [row_feature, col_feature])
+    g["small_cell"] = g["customers"] < MIN_CELL
+    g.loc[g["small_cell"], "churn_rate_pct"] = float("nan")
+    keep = [row_feature, col_feature, "customers", "churned", "churn_rate_pct",
+            "small_cell"]
+    return g[keep]
+
+
+def highest_risk_segments(df):
+    """Segments with at least MIN_SEGMENT customers, ranked by churn rate.
+
+    A segment is one feature value (e.g. contract = Month-to-month) or a pair
+    of two features (e.g. contract and internet_service).
+    """
+    keep = ["segment", "customers", "churned", "churn_rate_pct",
+            "share_of_churners_pct", "share_of_monthly_charges_pct"]
+    singles = churn_by_feature(df)
+    singles["segment"] = singles["feature"] + " = " + singles["value"]
+    parts = [singles[keep]]
+    for a, b in SEGMENT_PAIRS:
+        g = group_summary(df, [a, b])
+        g["segment"] = (a + " = " + g[a].astype(str) + " & "
+                        + b + " = " + g[b].astype(str))
+        parts.append(g[keep])
+    allseg = pd.concat(parts, ignore_index=True)
+    allseg = allseg[allseg["customers"] >= MIN_SEGMENT]
+    allseg = allseg.sort_values(["churn_rate_pct", "customers"], ascending=False)
+    allseg.insert(0, "rank", range(1, len(allseg) + 1))
+    return allseg.reset_index(drop=True)
+
+
 def check_tables(df, tables):
     """Stop with an error if the tables do not add up to the clean data."""
     total_churn = int(df["churned"].sum())
@@ -115,6 +157,13 @@ def check_tables(df, tables):
     overall = tables["overall_summary"].set_index("measure")["value"]
     if overall["churned_customers"] != total_churn:
         raise ValueError("overall summary: wrong churn count")
+    for name in ("segments_contract_internet", "segments_contract_tenure"):
+        t = tables[name]
+        if t["customers"].sum() != len(df) or t["churned"].sum() != total_churn:
+            raise ValueError(f"{name}: counts do not add up to the clean data")
+    risk = tables["highest_risk_segments"]
+    if (risk["customers"] < MIN_SEGMENT).any():
+        raise ValueError("highest_risk_segments: segment below the minimum size")
 
 
 def run_exploration(verbose=True):
@@ -126,6 +175,9 @@ def run_exploration(verbose=True):
         "overall_summary": overall_summary(df),
         "churn_by_feature": churn_by_feature(df),
         "numeric_comparison": numeric_comparison(df),
+        "segments_contract_internet": two_way(df, "contract", "internet_service"),
+        "segments_contract_tenure": two_way(df, "contract", "tenure_group"),
+        "highest_risk_segments": highest_risk_segments(df),
     }
     tables["feature_gaps"] = feature_gaps(tables["churn_by_feature"])
 

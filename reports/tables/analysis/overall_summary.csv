@@ -1,0 +1,9 @@
+measure,value
+customers,7043.0
+churned_customers,1869.0
+churn_rate_pct,26.54
+total_monthly_charges,456116.6
+monthly_charges_of_churned,139130.85
+share_of_monthly_charges_lost_pct,30.5
+avg_monthly_charges_churned,74.44
+avg_monthly_charges_stayed,61.27
