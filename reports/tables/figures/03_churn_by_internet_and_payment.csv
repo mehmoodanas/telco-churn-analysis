@@ -1,0 +1,8 @@
+feature,value,customers,churned,churn_rate_pct
+internet_service,No,1526,113,7.4
+internet_service,DSL,2421,459,18.96
+internet_service,Fiber optic,3096,1297,41.89
+payment_method,Credit card (automatic),1522,232,15.24
+payment_method,Bank transfer (automatic),1544,258,16.71
+payment_method,Mailed check,1612,308,19.11
+payment_method,Electronic check,2365,1071,45.29
