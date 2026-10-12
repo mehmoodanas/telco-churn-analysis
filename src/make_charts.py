@@ -1,7 +1,7 @@
 """Make the report charts (reports/figures/*.png) from the analysis tables.
 
 The data behind each chart is saved to reports/tables/figures/.
-Colours: grey for ordinary groups, one orange accent for the highest-churn group.
+Colours: grey for ordinary groups, one red accent for the highest-churn group.
 """
 
 import matplotlib
@@ -17,7 +17,7 @@ from stat_tests import run_tests  # noqa: E402
 
 DATA_DIR = TABLES_DIR / "figures"
 GREY = "#9AA5B1"
-ACCENT = "#D9480F"
+ACCENT = "#D62728"
 DARK = "#1F2933"
 BLUE = "#2F6690"
 DPI = 150
@@ -136,7 +136,7 @@ def chart_heatmap(df):
     n = data.pivot(index="contract", columns="internet_service",
                    values="customers").loc[rows, cols]
     fig, ax = plt.subplots(figsize=(7.5, 4.8))
-    im = ax.imshow(rate.values, cmap="Oranges", vmin=0, vmax=60)
+    im = ax.imshow(rate.values, cmap="Reds", vmin=0, vmax=60)
     for i in range(len(rows)):
         for j in range(len(cols)):
             r = rate.values[i, j]
@@ -171,7 +171,7 @@ def chart_feature_ranking(tests):
     ax.set_title("Contract, tenure and support services show the strongest\n"
                  "association with churn; gender and phone service almost none")
     ax.text(0.99, 0.03, f"n = {int(tests['n'].iloc[0]):,} customers\n"
-            "Orange: V ≥ 0.30   Blue: 0.10 – 0.30   Grey: < 0.10",
+            "Red: V ≥ 0.30   Blue: 0.10 – 0.30   Grey: < 0.10",
             transform=ax.transAxes, ha="right", fontsize=9, color=DARK)
     save(fig, "06_feature_association_ranking",
          cat[["feature", "effect_size", "effect_label", "p_value", "p_holm"]]
