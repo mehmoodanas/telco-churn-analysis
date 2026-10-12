@@ -24,3 +24,12 @@ The analysis uses the IBM Telco Customer Churn sample dataset (7,043 customers).
 ## Dataset
 
 See [data/README.md](data/README.md) for source, licence and download steps.
+
+## Progress
+
+- Done: data download, inspection and cleaning ([data quality report](reports/data_quality.md)).
+- Done: exploratory analysis, statistical tests and charts. See [analysis notes](docs/analysis_notes.md), the [notebook](notebooks/01_exploratory_analysis.ipynb) and `reports/figures/`.
+- Early result in this dataset: 26.54% of customers churned, and month-to-month customers churned at 42.71% vs 2.83% for two-year contracts (an association, not a cause).
+- Next: prediction models and final recommendations.
+
+Rebuild everything with `python run_project.py`.
