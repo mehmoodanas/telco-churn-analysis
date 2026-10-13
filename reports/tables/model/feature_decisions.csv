@@ -1,0 +1,26 @@
+feature,decision,reason
+customer_id,excluded,identifier
+churn,excluded,target (text version)
+churned,excluded,target
+total_charges,excluded,"about tenure x monthly charges, so mostly a copy of two other features"
+monthly_charges,excluded,"99.9% explained by the service columns (R-squared), which makes odds ratios unstable; dropping it left the cross-validated AUC unchanged (see feature_sensitivity.csv)"
+tenure_group,excluded,tenure_months cut into bands
+is_new_customer,excluded,tenure_months = 0
+addon_services,excluded,count of the six add-on columns
+tenure_months,"used (numeric, scaled)",
+gender,"used (one-hot, reference: Female)",
+senior_citizen,"used (one-hot, reference: No)",
+partner,"used (one-hot, reference: No)",
+dependents,"used (one-hot, reference: No)",
+phone_service,"used (one-hot, reference: No)",
+multiple_lines,"used (one-hot, reference: No)",'No ... service' merged into 'No'
+internet_service,"used (one-hot, reference: DSL)",
+online_security,"used (one-hot, reference: No)",'No ... service' merged into 'No'
+online_backup,"used (one-hot, reference: No)",'No ... service' merged into 'No'
+device_protection,"used (one-hot, reference: No)",'No ... service' merged into 'No'
+tech_support,"used (one-hot, reference: No)",'No ... service' merged into 'No'
+streaming_tv,"used (one-hot, reference: No)",'No ... service' merged into 'No'
+streaming_movies,"used (one-hot, reference: No)",'No ... service' merged into 'No'
+contract,"used (one-hot, reference: Month-to-month)",
+paperless_billing,"used (one-hot, reference: No)",
+payment_method,"used (one-hot, reference: Bank transfer (automatic))",

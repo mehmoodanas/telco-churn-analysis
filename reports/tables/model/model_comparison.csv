@@ -1,0 +1,4 @@
+model,cv_roc_auc_mean,cv_roc_auc_std,cv_pr_auc_mean,cv_pr_auc_std,test_roc_auc,test_pr_auc,accuracy,precision,recall,f1,true_positive,false_positive,false_negative,true_negative,customers_flagged
+Baseline (always predicts stayed),0.5,0.0,0.265353,9.4e-05,0.5,0.265436,0.734564,0.0,0.0,0.0,0,0,374,1035,0
+Logistic regression,0.844845,0.012122,0.659492,0.01881,0.83938,0.630083,0.797019,0.635802,0.550802,0.590258,206,118,168,917,324
+Gradient boosting,0.849512,0.012151,0.666423,0.021759,0.845563,0.658585,0.804116,0.670139,0.516043,0.583082,193,95,181,940,288

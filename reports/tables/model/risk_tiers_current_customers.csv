@@ -1,0 +1,4 @@
+tier,customers,avg_predicted_churn,monthly_charges,expected_monthly_charges_at_risk,share_of_customers_pct,share_of_expected_at_risk_pct
+High,997,0.531334,76354.95,41288.68479,19.269424,60.834969
+Medium,959,0.251816,61003.05,15609.596335,18.534983,22.999263
+Low,3218,0.057769,179627.75,10971.704682,62.195593,16.165768

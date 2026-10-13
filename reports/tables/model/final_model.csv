@@ -1,0 +1,8 @@
+measure,value
+final_model,Logistic regression
+threshold,0.35
+threshold_rule,highest threshold with out-of-fold recall >= 0.7 on the training set
+train_customers,5634
+test_customers,1409
+random_state,42
+confusion_tn_fp_fn_tp_at_threshold,814 221 110 264

@@ -1,0 +1,13 @@
+model,parameters,cv_roc_auc_mean,cv_roc_auc_std,chosen
+Logistic regression,{'model__C': 0.01},0.842416,0.01224,0
+Logistic regression,{'model__C': 0.1},0.844664,0.012119,0
+Logistic regression,{'model__C': 1},0.844837,0.012118,0
+Logistic regression,{'model__C': 10},0.844845,0.012122,1
+Gradient boosting,"{'model__learning_rate': 0.05, 'model__max_depth': 2, 'model__max_iter': 100}",0.847413,0.013081,0
+Gradient boosting,"{'model__learning_rate': 0.05, 'model__max_depth': 2, 'model__max_iter': 200}",0.849512,0.012151,1
+Gradient boosting,"{'model__learning_rate': 0.05, 'model__max_depth': 3, 'model__max_iter': 100}",0.849314,0.010965,0
+Gradient boosting,"{'model__learning_rate': 0.05, 'model__max_depth': 3, 'model__max_iter': 200}",0.848788,0.011088,0
+Gradient boosting,"{'model__learning_rate': 0.1, 'model__max_depth': 2, 'model__max_iter': 100}",0.84946,0.01224,0
+Gradient boosting,"{'model__learning_rate': 0.1, 'model__max_depth': 2, 'model__max_iter': 200}",0.848293,0.012288,0
+Gradient boosting,"{'model__learning_rate': 0.1, 'model__max_depth': 3, 'model__max_iter': 100}",0.848532,0.011939,0
+Gradient boosting,"{'model__learning_rate': 0.1, 'model__max_depth': 3, 'model__max_iter': 200}",0.844111,0.012903,0

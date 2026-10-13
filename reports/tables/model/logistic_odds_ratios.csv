@@ -1,0 +1,22 @@
+feature,level,compared_with,odds_ratio,ci_low,ci_high
+contract,Two year,Month-to-month,0.255466,0.177051,0.361099
+internet_service,Fiber optic,DSL,2.502036,2.080122,3.113123
+internet_service,No,DSL,0.437049,0.321601,0.60262
+tenure_months,per +1 SD (24.6),average customer,0.448453,0.385615,0.497632
+contract,One year,Month-to-month,0.492104,0.401336,0.598115
+phone_service,Yes,No,0.626806,0.462892,0.836955
+online_security,Yes,No,0.675928,0.583755,0.785872
+payment_method,Electronic check,Bank transfer (automatic),1.461154,1.196911,1.775416
+paperless_billing,Yes,No,1.446652,1.269563,1.710223
+tech_support,Yes,No,0.712791,0.59288,0.872043
+multiple_lines,Yes,No,1.385614,1.159417,1.635473
+streaming_tv,Yes,No,1.328683,1.104275,1.580013
+streaming_movies,Yes,No,1.324129,1.101637,1.560868
+dependents,Yes,No,0.792443,0.655039,0.961083
+senior_citizen,Yes,No,1.15539,0.92715,1.426742
+online_backup,Yes,No,0.87982,0.759139,1.031732
+payment_method,Mailed check,Bank transfer (automatic),1.108246,0.906603,1.405829
+payment_method,Credit card (automatic),Bank transfer (automatic),0.960653,0.74571,1.218613
+gender,Male,Female,1.024302,0.904602,1.170868
+partner,Yes,No,1.021205,0.84199,1.201666
+device_protection,Yes,No,1.000077,0.81991,1.203908

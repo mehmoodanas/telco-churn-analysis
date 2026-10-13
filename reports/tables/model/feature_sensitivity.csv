@@ -1,0 +1,6 @@
+logistic_regression_features,value
+tenure + categorical (used),0.839449
++ total_charges,0.842522
++ monthly_charges,0.839324
++ both,0.842233
+R-squared of monthly_charges on the used features (training set),0.998837

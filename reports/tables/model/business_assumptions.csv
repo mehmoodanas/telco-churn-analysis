@@ -1,0 +1,7 @@
+assumption
+"Scores for all 7,043 customers are out-of-fold: each customer is scored by a model fitted on other customers."
+Only customers with churned = 0 are tiered. In this snapshot they are the customers who had not left.
+High tier: predicted churn probability at or above 0.35 (the chosen threshold). Medium: 0.175 to below 0.35. Low: below 0.175.
+"Expected monthly charges at risk = sum of monthly_charges x predicted churn probability. It assumes the probabilities are well calibrated and is an estimate, not a forecast."
+"It is a monthly bill, not lifetime value or profit, and the data has no dates, so it says nothing about when customers would leave."
+"Sample dataset: the figures describe this dataset, not a real company."
