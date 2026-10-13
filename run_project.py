@@ -9,7 +9,9 @@ Steps:
     3. Clean the data and run the cleaning checks           (src/clean_data.py)
     4. Build the exploratory analysis tables and check them (src/explore.py)
     5. Run the statistical tests                            (src/stat_tests.py)
-    6. Make the charts                                      (src/make_charts.py)
+    6. Make the exploration charts                          (src/make_charts.py)
+    7. Train and evaluate the churn models, run model checks (src/model.py)
+    8. Make the model charts                                (src/model_charts.py)
 
 Every step rebuilds its output files, so the script is safe to rerun.
 It stops with an error if a check fails.
@@ -26,9 +28,11 @@ from download_data import download_data  # noqa: E402
 from explore import run_exploration  # noqa: E402
 from inspect_data import inspect_data  # noqa: E402
 from make_charts import make_charts  # noqa: E402
+from model import run_model  # noqa: E402
+from model_charts import make_model_charts  # noqa: E402
 from stat_tests import run_tests  # noqa: E402
 
-STEPS = 6
+STEPS = 8
 
 
 def step(number, title):
@@ -54,9 +58,21 @@ def main():
     tests = run_tests()
     print(f"{len(tests)} tests, {int(tests['significant_after_holm'].sum())} significant after Holm correction")
 
-    step(6, "Charts")
+    step(6, "Exploration charts")
     charts = make_charts()
     print(f"Saved {len(charts)} charts to {FIGURES_DIR}")
+
+    step(7, "Churn models (takes a couple of minutes)")
+    result = run_model(verbose=False)
+    comp = result["comparison"].set_index("model")
+    print(f"Model checks passed. Test ROC-AUC: "
+          + ", ".join(f"{m.split(' (')[0]} {comp.loc[m, 'test_roc_auc']:.3f}" for m in comp.index))
+    print(f"Final model: {result['final']}, threshold {result['threshold']:.2f}")
+    print(f"Saved tables to {TABLES_DIR / 'model'}")
+
+    step(8, "Model charts")
+    model_charts = make_model_charts()
+    print(f"Saved {len(model_charts)} charts to {FIGURES_DIR}")
 
     print("\nDone.")
 
