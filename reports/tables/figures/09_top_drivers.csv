@@ -1,0 +1,19 @@
+feature,level,compared_with,odds_ratio,ci_low,ci_high,panel,auc_drop_mean,auc_drop_std
+tech_support,Yes,No,0.712791,0.59288,0.872043,odds_ratio,,
+paperless_billing,Yes,No,1.446652,1.269563,1.710223,odds_ratio,,
+payment_method,Electronic check,Bank transfer (automatic),1.461154,1.196911,1.775416,odds_ratio,,
+online_security,Yes,No,0.675928,0.583755,0.785872,odds_ratio,,
+phone_service,Yes,No,0.626806,0.462892,0.836955,odds_ratio,,
+contract,One year,Month-to-month,0.492104,0.401336,0.598115,odds_ratio,,
+tenure_months,per +1 SD (24.6),average customer,0.448453,0.385615,0.497632,odds_ratio,,
+internet_service,No,DSL,0.437049,0.321601,0.60262,odds_ratio,,
+internet_service,Fiber optic,DSL,2.502036,2.080122,3.113123,odds_ratio,,
+contract,Two year,Month-to-month,0.255466,0.177051,0.361099,odds_ratio,,
+online_security,,,,,,permutation_importance,0.001586,0.000714
+paperless_billing,,,,,,permutation_importance,0.00191,0.001354
+tech_support,,,,,,permutation_importance,0.002109,0.001761
+phone_service,,,,,,permutation_importance,0.002178,0.00077
+payment_method,,,,,,permutation_importance,0.003317,0.001323
+contract,,,,,,permutation_importance,0.048369,0.004942
+internet_service,,,,,,permutation_importance,0.051736,0.009274
+tenure_months,,,,,,permutation_importance,0.085236,0.00428
