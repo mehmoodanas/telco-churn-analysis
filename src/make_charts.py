@@ -188,7 +188,7 @@ def make_charts():
     chart_monthly_charges(df)
     chart_heatmap(df)
     chart_feature_ranking(tests)
-    made = sorted(p.name for p in FIGURES_DIR.glob("*.png"))
+    made = sorted(p.name for p in FIGURES_DIR.glob("0[1-6]_*.png"))
     if len(made) != 6:
         raise ValueError(f"expected 6 charts, found {len(made)}")
     return made
