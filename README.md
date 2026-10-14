@@ -101,3 +101,7 @@ data/                 raw and processed data (not in git; see data/README.md)
 ## Contribution note
 
 Project designed, reviewed and documented by Anas Mehmood as a learning portfolio project.
+
+## Licence
+
+Code is released under the [MIT licence](LICENSE). The dataset keeps its own licence, see [data/README.md](data/README.md).
